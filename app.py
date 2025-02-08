@@ -52,7 +52,7 @@ def register_mobile():
         "zone": "EZ"
     }
 
-    response = requests.post(url, headers=headers, cookies=cookies, data=payload, verify=False)
+    response = requests.post(url, headers=headers, cookies=cookies, data=payload, verify=False, timeout=10)
     return jsonify({"status_code": response.status_code, "response": response.text})
 
 if __name__ == "__main__":
